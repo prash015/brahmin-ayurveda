@@ -1,38 +1,180 @@
-.App {
-  text-align: center;
+/* ================= GLOBAL VARIABLES ================= */
+:root {
+  --brand-green: #67be57; 
+  --dark-green: #4da040;
+  --text-dark: #2c3e50;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* ================= STRONG ANIMATIONS ================= */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Start 50px lower */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at normal position */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Class to apply the animation */
+.animate-slide-up {
+  animation: slideUpFade 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; /* Smooth easing */
+  opacity: 0; /* Hidden initially until animation starts */
+}
+
+/* ================= INFO CARDS (Floating 3 Boxes) ================= */
+.info-card {
+  border-radius: 20px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  min-height: 220px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(103, 190, 87, 0.3) !important;
+}
+
+/* ================= SERVICE CARDS (Image + Overlay) ================= */
+.service-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.service-img-container {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(103, 190, 87, 0.9);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease-in-out;
+}
+
+.service-overlay i {
+  color: white;
+  font-size: 3rem;
+}
+
+.service-box:hover .service-img {
+  transform: scale(1.1);
+}
+
+.service-box:hover .service-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-content {
+  padding: 25px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  background: white;
+}
+
+.service-icon-static {
+  width: 70px;
+  height: 70px;
+  background: #eafbe7;
+  color: var(--brand-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -60px auto 15px auto; 
+  position: relative;
+  border: 5px solid white;
+  font-size: 1.8rem;
+}
+
+/* ================= BUTTONS ================= */
+.btn-brand {
+  background-color: var(--brand-green);
+  color: white;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-brand:hover {
+  background-color: var(--dark-green);
   color: white;
 }
+/* ================= MOBILE RESPONSIVENESS ================= */
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* On Mobile Screens (tablets and phones) */
+@media (max-width: 991px) {
+  
+  /* 1. Make the Hero Text smaller so it fits */
+  .display-3 {
+    font-size: 2.5rem !important; 
   }
-  to {
-    transform: rotate(360deg);
+  
+  .display-4 {
+    font-size: 2rem !important;
+  }
+  
+  .display-5 {
+    font-size: 1.8rem !important;
+  }
+
+  /* 2. Reset the "Floating Cards" overlap */
+  /* This prevents the cards from covering the doctor's face on mobile */
+  .floating-section {
+    margin-top: 30px !important; /* Push it down instead of up */
+  }
+
+  /* 3. Adjust Hero Height */
+  header {
+    height: auto !important; /* Let content dictate height */
+    min-height: 400px;
+    padding-top: 80px;
+    padding-bottom: 50px;
+  }
+  
+  /* 4. Center text on mobile for better readability */
+  header .col-lg-6 {
+    text-align: center;
+  }
+  
+  header .d-flex {
+    justify-content: center;
+  }
+  
+  /* 5. Hide the doctor image on small mobile screens if it takes too much space */
+  .hero-img-mobile-hide {
+    display: none !important;
   }
 }
