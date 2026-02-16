@@ -4,7 +4,6 @@ import '../App.css';
 import VdAeshaBDesai from "../assets/images/VdAeshaBDesai.jpeg";
 import VdPriyankaHDodiya from "../assets/images/VdPriyankaHDodiya.png";
 
-
 const Doctors = () => {
   const brandGreen = '#67be57'; 
 
@@ -31,6 +30,20 @@ const Doctors = () => {
       specialty: "Women's Health",
       exp: "15+ Years Exp",
       img: VdPriyankaHDodiya,
+
+      name: "Dr. Rajesh Sharma",
+      degree: "B.A.M.S, M.D. (Panchkarma)",
+      specialty: "Chief Physician",
+      exp: "20+ Years Exp",
+      img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      desc: "Specialist in chronic disorders and Nadi Pariksha (Pulse Diagnosis)."
+    },
+    {
+      name: "Dr. Anjali Verma",
+      degree: "B.A.M.S, Ph.D. (Ayurveda)",
+      specialty: "Women's Health",
+      exp: "15+ Years Exp",
+      img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
       desc: "Expert in Garba Sanskar, PCOD, and infertility treatments."
     },
     {

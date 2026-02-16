@@ -21,6 +21,7 @@ const SwasthAyurveda = () => {
       subtitle: 'Seasonal Regimen',
       icon: 'bi-cloud-sun', 
       img: HealthyLifestyle, 
+      img: 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', 
       desc: 'Adapting your diet and lifestyle according to the six seasons to maintain Dosha balance.' 
     },
     { 
@@ -115,7 +116,7 @@ const [openFaq, setOpenFaq] = useState(0); // Default open the first one (index 
             </ul>
           </div>
           <div className="col-lg-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-             <img 
+             <img
                 src= {LifeStyle}
                 alt="Healthy Lifestyle" 
                 className="img-fluid rounded-4 shadow-lg" 

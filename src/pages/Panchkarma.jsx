@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css'; 
 import KatiBasti from "../assets/images/KatiBasti.jpeg";
-import Vaman from "../assets/images/Vaman.jpeg";
+import Vamana from "../assets/images/Vamana.jpeg";
 import Virechana from "../assets/images/Virechana.png";
-
 
 const Panchkarma = () => {
   const brandGreen = '#67be57'; 
@@ -26,7 +25,7 @@ const Panchkarma = () => {
       title: 'Vamana', 
       subtitle: 'Therapeutic Emesis',
       icon: 'bi-moisture', 
-      img: Vaman, 
+      img: Vamana,  
       desc: 'Elimination of toxins through the mouth. Best for Kapha disorders like asthma, allergies, and skin issues.' 
     },
     { 
@@ -34,6 +33,7 @@ const Panchkarma = () => {
       subtitle: 'Purgation Therapy',
       icon: 'bi-arrow-down-circle', 
       img: Virechana, 
+      img: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', 
       desc: 'Removal of toxins through the lower GI tract. Ideal for Pitta disorders like acidity, liver issues, and rashes.' 
     },
     { 
@@ -130,6 +130,7 @@ const Panchkarma = () => {
           </div>
           <div className="col-lg-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
              <img src= {KatiBasti} className="img-fluid rounded-4 shadow-lg" alt="Oil Massage" />
+             <img src="https://images.unsplash.com/photo-1519823551278-64ac927accc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" className="img-fluid rounded-4 shadow-lg" alt="Oil Massage" />
           </div>
         </div>
 

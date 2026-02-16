@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css'; 
 import Shirodhara from "../assets/images/Shirodhara.jpeg";
-
+import Panchkarma from '../assets/images/Panchkarma.png';
 
 const Home = () => {
   const brandGreen = '#67be57'; 
