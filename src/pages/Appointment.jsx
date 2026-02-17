@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import toast  from "react-hot-toast";
+import toast from "react-hot-toast";
 import "../App.css";
 
 const Appointment = () => {
@@ -8,7 +8,8 @@ const Appointment = () => {
 
   const initialState = {
     name: "",
-    phone: "+91",
+    countryCode: "+91",
+    phone: "",
     date: "",
     dept: "General Consultation",
     doctor: "Any Available Doctor",
@@ -17,16 +18,34 @@ const Appointment = () => {
 
   const [formData, setFormData] = useState(initialState);
   const [loading, setLoading] = useState(false);
+  const [phoneError, setPhoneError] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+
+    // remove red border while typing
+    if (e.target.name === "phone") setPhoneError(false);
+  };
+
+  // ✅ phone validation
+  const validatePhone = () => {
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      setPhoneError(true);
+      toast.error("Enter valid 10-digit phone number");
+      return false;
+    }
+    setPhoneError(false);
+    return true;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validatePhone()) return;
 
     try {
       setLoading(true);
@@ -35,26 +54,20 @@ const Appointment = () => {
         "https://brahmin-ayruveda-backend-8oi4.vercel.app/api/appointments",
         formData,
         {
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
         }
       );
 
       toast.success("Appointment booked successfully!");
-
-      // Reset form
       setFormData(initialState);
 
     } catch (err) {
       console.error(err);
-
       if (err.response) {
         toast.error(err.response.data.message || "Booking failed");
       } else {
         toast.error("Server not reachable");
       }
-
     } finally {
       setLoading(false);
     }
@@ -62,8 +75,6 @@ const Appointment = () => {
 
   return (
     <div>
-      {/* Toast Container */}
-
       {/* HERO */}
       <header
         className="position-relative d-flex align-items-center justify-content-center"
@@ -75,10 +86,7 @@ const Appointment = () => {
         }}
       >
         <div className="container text-center text-white">
-          <h5
-            className="text-uppercase fw-bold mb-3"
-            style={{ letterSpacing: "2px", color: brandGreen }}
-          >
+          <h5 className="text-uppercase fw-bold mb-3" style={{ letterSpacing: "2px", color: brandGreen }}>
             Book Your Visit
           </h5>
           <h1 className="display-3 fw-bold">Appointment Request</h1>
@@ -98,10 +106,9 @@ const Appointment = () => {
               <form onSubmit={handleSubmit}>
                 <div className="row g-3">
 
+                  {/* NAME */}
                   <div className="col-md-6">
-                    <label className="form-label fw-bold small">
-                      Full Name
-                    </label>
+                    <label className="form-label fw-bold small">Full Name</label>
                     <input
                       type="text"
                       name="name"
@@ -112,24 +119,50 @@ const Appointment = () => {
                     />
                   </div>
 
+                  {/* PHONE WITH COUNTRY CODE */}
                   <div className="col-md-6">
-                    <label className="form-label fw-bold small">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      className="form-control p-3"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                    />
+                    <label className="form-label fw-bold small">Phone Number</label>
+
+                    <div className="input-group">
+                      <select
+                        name="countryCode"
+                        className="form-select"
+                        style={{ maxWidth: "110px" }}
+                        value={formData.countryCode}
+                        onChange={handleChange}
+                      >
+                        <option value="+91">🇮🇳 +91</option>
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+44">🇬🇧 +44</option>
+                        <option value="+971">🇦🇪 +971</option>
+                      </select>
+
+                      <input
+                        type="tel"
+                        name="phone"
+                        className={`form-control p-3 ${phoneError ? "border-danger shake" : ""}`}
+                        value={formData.phone}
+                        onChange={(e) => {
+                          const value = e.target.value;
+
+                          // allow only digits
+                          if (/^\d*$/.test(value)) {
+                            setFormData({ ...formData, phone: value });
+                            setPhoneError(false);
+                          } else {
+                            setPhoneError(true); // show red flash instantly
+                          }
+                        }}
+                        maxLength={10}
+                        required
+                      />
+
+                    </div>
                   </div>
 
+                  {/* DATE */}
                   <div className="col-md-6">
-                    <label className="form-label fw-bold small">
-                      Preferred Date
-                    </label>
+                    <label className="form-label fw-bold small">Preferred Date</label>
                     <input
                       type="date"
                       name="date"
@@ -140,10 +173,9 @@ const Appointment = () => {
                     />
                   </div>
 
+                  {/* DEPARTMENT */}
                   <div className="col-md-6">
-                    <label className="form-label fw-bold small">
-                      Department
-                    </label>
+                    <label className="form-label fw-bold small">Department</label>
                     <select
                       name="dept"
                       className="form-select p-3"
@@ -157,10 +189,9 @@ const Appointment = () => {
                     </select>
                   </div>
 
+                  {/* DOCTOR */}
                   <div className="col-12">
-                    <label className="form-label fw-bold small">
-                      Choose Doctor
-                    </label>
+                    <label className="form-label fw-bold small">Choose Doctor</label>
                     <select
                       name="doctor"
                       className="form-select p-3"
@@ -173,10 +204,9 @@ const Appointment = () => {
                     </select>
                   </div>
 
+                  {/* MESSAGE */}
                   <div className="col-12">
-                    <label className="form-label fw-bold small">
-                      Describe Problem
-                    </label>
+                    <label className="form-label fw-bold small">Describe Problem</label>
                     <textarea
                       name="message"
                       className="form-control p-3"
@@ -186,6 +216,7 @@ const Appointment = () => {
                     />
                   </div>
 
+                  {/* SUBMIT */}
                   <div className="col-12 mt-4">
                     <button
                       type="submit"
@@ -202,12 +233,9 @@ const Appointment = () => {
             </div>
           </div>
 
-          {/* SIDEBAR (UNCHANGED) */}
+          {/* SIDEBAR SAME */}
           <div className="col-lg-5">
-            <div
-              className="p-4 rounded-4 text-white mb-4 shadow"
-              style={{ backgroundColor: brandGreen }}
-            >
+            <div className="p-4 rounded-4 text-white mb-4 shadow" style={{ backgroundColor: brandGreen }}>
               <h4>Before You Visit</h4>
               <ul>
                 <li>Bring old reports</li>
@@ -229,7 +257,6 @@ const Appointment = () => {
               <h3 style={{ color: brandGreen }}>+91 9712311557</h3>
             </div>
           </div>
-
         </div>
       </section>
     </div>
