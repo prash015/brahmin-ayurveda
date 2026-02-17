@@ -30,37 +30,6 @@ const Doctors = () => {
       specialty: "Women's Health",
       exp: "15+ Years Exp",
       img: VdPriyankaHDodiya,
-
-      name: "Dr. Rajesh Sharma",
-      degree: "B.A.M.S, M.D. (Panchkarma)",
-      specialty: "Chief Physician",
-      exp: "20+ Years Exp",
-      img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      desc: "Specialist in chronic disorders and Nadi Pariksha (Pulse Diagnosis)."
-    },
-    {
-      name: "Dr. Anjali Verma",
-      degree: "B.A.M.S, Ph.D. (Ayurveda)",
-      specialty: "Women's Health",
-      exp: "15+ Years Exp",
-      img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      desc: "Expert in Garba Sanskar, PCOD, and infertility treatments."
-    },
-    {
-      name: "Dr. Vikram Singh",
-      degree: "B.A.M.S, Yoga Specialist",
-      specialty: "Lifestyle & Diet",
-      exp: "12+ Years Exp",
-      img: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      desc: "Focuses on therapeutic yoga and personalized diet plans."
-    },
-    {
-      name: "Dr. Meera Iyer",
-      degree: "B.A.M.S, Child Care",
-      specialty: "Pediatric Ayurveda",
-      exp: "10+ Years Exp",
-      img: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      desc: "Gentle holistic care for immunity and growth in children."
     }
   ];
 
@@ -122,7 +91,7 @@ const Doctors = () => {
                </div>
             </div>
             <div className="col-lg-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-               <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Doctors Team" className="img-fluid rounded-4 shadow-lg" />
+               <img src={VdPriyankaHDodiya} className="img-fluid rounded-4 shadow-lg" />
             </div>
          </div>
       </section>

@@ -18,10 +18,13 @@ import Hospitals from './pages/Hospitals';
 import Doctors from './pages/Doctors';
 import Contact from './pages/Contact';
 import Appointment from './pages/Appointment';
+import {Toaster} from "react-hot-toast";
 
 function App() {
   return (
+    <>
     <Router>
+      <Toaster position="top-right" />
       {/* ScrollToTop ensures new pages start at the top */}
       <ScrollToTop/>
       <Header />
@@ -37,6 +40,7 @@ function App() {
       </Routes>
       <Footer />
     </Router>
+    </>
   );
 }
 

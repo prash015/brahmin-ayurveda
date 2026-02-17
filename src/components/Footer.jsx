@@ -17,9 +17,9 @@ const Footer = () => {
               We provide authentic treatments to heal your body, mind, and soul.
             </p>
             <div className="d-flex gap-3 mt-3">
-               <a href="#" className="text-white fs-5"><i className="bi bi-facebook"></i></a>
-               <a href="#" className="text-white fs-5"><i className="bi bi-instagram"></i></a>
-               <a href="#" className="text-white fs-5"><i className="bi bi-youtube"></i></a>
+               <a href="https://www.facebook.com/share/1APJqFuzZb/" target="_blank" rel="noopener noreferrer" className="text-white fs-5 hover-brand"><i className="bi bi-facebook"></i></a>
+               <a href="https://whatsapp.com/channel/0029VbARMpxISTkROSyxY22X" target="_blank" rel="noopener noreferrer" className="text-white fs-5 hover-brand"><i className="bi bi-whatsapp"></i></a>
+               <a href="https://www.youtube.com/@brahmiayu" target="_blank" rel="noopener noreferrer" className="text-white fs-5 hover-brand"><i className="bi bi-youtube"></i></a>
             </div>
           </div>
 
@@ -50,9 +50,22 @@ const Footer = () => {
           <div className="col-lg-3 col-md-6">
             <h5 className="fw-bold mb-3 text-uppercase" style={{ color: brandGreen }}>Get in Touch</h5>
             <ul className="list-unstyled text-white-50">
-              <li className="mb-3 d-flex"><i className="bi bi-geo-alt me-2" style={{color: brandGreen}}></i> 123 Ayurveda Marg, Pune</li>
-              <li className="mb-3 d-flex"><i className="bi bi-telephone me-2" style={{color: brandGreen}}></i> +91 98765 43210</li>
-              <li className="mb-3 d-flex"><i className="bi bi-envelope me-2" style={{color: brandGreen}}></i> info@brahmiayurveda.com</li>
+              <li className="mb-3 d-flex">
+                <i className="bi bi-geo-alt me-2 flex-shrink-0" style={{color: brandGreen}}></i> 
+                <span>314, Samanvay Business Square, Waghodia Road, Vadodara – 390019</span>
+              </li>
+              <li className="mb-3 d-flex">
+                <i className="bi bi-telephone me-2" style={{color: brandGreen}}></i> 
+                <a href="tel:+919712311557" className="text-white-50 text-decoration-none hover-white">+91 97123 11557</a>
+              </li>
+              <li className="mb-3 d-flex">
+                <i className="bi bi-envelope me-2" style={{color: brandGreen}}></i> 
+                <a href="mailto:info@brahmiayu.com" className="text-white-50 text-decoration-none hover-white">info@brahmiayu.com</a>
+              </li>
+              <li className="mb-3 d-flex">
+                <i className="bi bi-clock me-2" style={{color: brandGreen}}></i> 
+                <span className="small">10 AM - 2 PM, 4:30 PM - 8 PM</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -60,7 +73,7 @@ const Footer = () => {
         <hr className="border-secondary my-4" />
 
         <div className="text-center text-white-50">
-           <small>&copy; 2026 Brahmi Ayurveda Hospital. All Rights Reserved.</small>
+           <small>&copy; 2026 Brahmi Ayurveda. All Rights Reserved. | Designed with ❤️ for Holistic Wellness</small>
         </div>
       </div>
     </footer>

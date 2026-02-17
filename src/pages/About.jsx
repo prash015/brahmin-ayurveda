@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import '../App.css'; 
 import YogaHall from "../assets/images/YogaHall.png";
 import PanchkarmaTheatre from "../assets/images/PanchkarmaTheatre.png";
+import founder1 from "../assets/images/VdPriyankaHDodiya.png";
+import founder2 from "../assets/images/VdAeshaBDesai.jpeg";
 
 const About = () => {
   const brandGreen = '#67be57'; 
@@ -16,25 +18,36 @@ const About = () => {
 
   // Timeline Data
   const history = [
-    { year: '2010', title: 'The Beginning', desc: 'Founded by Vaidya Sharma with a small 2-bed clinic in Pune.' },
-    { year: '2015', title: 'Expansion', desc: 'Expanded to a 20-bed hospital with full Panchkarma facilities.' },
-    { year: '2020', title: 'Excellence Award', desc: 'Recognized as the "Best Ayurvedic Center" in Maharashtra.' },
-    { year: '2025', title: 'Global Reach', desc: 'Launched online consultations and shipping of herbal medicines.' }
+    { year: '2013', title: 'The Beginning', desc: 'Founded by Dr. Priyanka H. Dodiya (Verma) with a vision to provide authentic Ayurvedic care.' },
+    { year: '2018', title: 'Partnership', desc: 'Dr. Aesha Desai joined as co-founder, strengthening our Panchakarma expertise.' },
+    { year: '2020', title: 'Expansion', desc: 'Established comprehensive facilities including state-of-the-art Panchakarma theatre.' },
+    { year: '2026', title: 'Excellence', desc: 'Recognized for quality-controlled formulations and evidence-based Ayurveda practice.' }
   ];
 
   // Facilities Data
   const facilities = [
-    { title: 'Herbal Pharmacy', img: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', desc: 'In-house manufacturing of fresh medicines.' },
-    { title: 'Yoga Hall', img: YogaHall, desc: 'Spacious hall for daily therapeutic yoga.' },
-    { title: 'Panchkarma Theatre', img: PanchkarmaTheatre, desc: 'Hygienic, traditional therapy rooms.' },
-    { title: 'Organic Canteen', img: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', desc: 'Sattvic food cooked as per dietary norms.' }
+    { title: 'Herbal Pharmacy', img: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', desc: 'Quality-controlled Ayurvedic formulations.' },
+    { title: 'Yoga Hall', img: YogaHall, desc: 'Spacious hall for therapeutic yoga and wellness.' },
+    { title: 'Panchkarma Theatre', img: PanchkarmaTheatre, desc: 'Classical Panchakarma therapy rooms.' },
+    { title: 'Consultation Rooms', img: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', desc: 'Private consultation spaces for personalized care.' }
   ];
 
-  // Team Data
-  const team = [
-    { name: 'Dr. Rajesh Sharma', role: 'Medical Director', img: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
-    { name: 'Dr. Anjali Verma', role: 'Senior Consultant', img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' },
-    { name: 'Mr. Amit Deshmukh', role: 'Hospital Administrator', img: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80' }
+  // Founders Data
+  const founders = [
+    { 
+      name: 'Vd. Priyanka H. Dodiya (Verma)', 
+      role: 'M.D. (Ayurveda), Founder & Chief Consultant', 
+      img: founder1,
+      experience: '12 years of clinical practice',
+      specialties: 'Liver disorders, Lifestyle disorders, Digestive disorders, Gynaecological disorders, Cosmetic & Aesthetic conditions'
+    },
+    { 
+      name: 'Dr. Aesha Desai', 
+      role: 'B.A.M.S., Co-Founder & Panchakarma Specialist', 
+      img: founder2,
+      experience: 'Expert in classical Ayurvedic principles',
+      specialties: 'Chronic lifestyle disorders, Joint & muscular conditions, Digestive problems, Stress disorders, Women\'s health'
+    }
   ];
 
   return (
@@ -56,40 +69,85 @@ const About = () => {
         </div>
       </header>
 
-      {/* ================= FOUNDER'S MESSAGE ================= */}
+      {/* ================= FOUNDERS' SECTION ================= */}
       <section className="container my-5 py-5">
-        <div className="row align-items-center">
-          <div className="col-lg-5 mb-5 mb-lg-0 animate-slide-up">
+        <div className="text-center mb-5">
+          <h5 className="text-uppercase fw-bold" style={{ color: brandGreen }}>Leadership</h5>
+          <h2 className="fw-bold display-5">Meet Our Founders</h2>
+          <p className="text-muted">Dedicated to restoring balance and promoting holistic wellness</p>
+        </div>
+
+        {/* Founder 1: Dr. Priyanka */}
+        <div className="row align-items-center mb-5 pb-5">
+          <div className="col-lg-5 mb-4 mb-lg-0 animate-slide-up">
             <div className="position-relative">
                <img 
-                 src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                 alt="Founder" 
+                 src={founders[0].img}
+                 alt={founders[0].name}
                  className="img-fluid rounded-4 shadow-lg"
                />
-               <div className="bg-white p-3 shadow position-absolute bottom-0 start-0 m-4 rounded-3 d-none d-md-block">
-                  <h5 className="fw-bold mb-0" style={{color: brandGreen}}>Dr. Rajesh Sharma</h5>
-                  <small>Founder & Chief Physician</small>
+               <div className="bg-white p-3 shadow position-absolute bottom-0 start-0 m-4 rounded-3">
+                  <h5 className="fw-bold mb-0" style={{color: brandGreen}}>{founders[0].name}</h5>
+                  <small>{founders[0].role}</small>
                </div>
             </div>
           </div>
           <div className="col-lg-7 ps-lg-5 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-             <h5 className="text-uppercase fw-bold" style={{ color: brandGreen }}>Founder's Message</h5>
-             <h2 className="fw-bold display-5 mb-4">Healing comes from Nature</h2>
-             <figure>
-               <blockquote className="blockquote">
-                 <p className="fs-5 text-muted fst-italic">
-                   "Our goal was never just to build a hospital. It was to build a sanctuary where people could find hope when modern medicine gave up. Ayurveda is not just a treatment; it is a way of life."
-                 </p>
-               </blockquote>
-               <figcaption className="blockquote-footer mt-2">
-                 Vaidya Rajesh Sharma, <cite title="Source Title">B.A.M.S, MD (Ayurveda)</cite>
-               </figcaption>
-             </figure>
-             <p className="text-secondary mt-4">
-                Established in 2010, Brahmi Ayurveda has grown from a humble clinic to a multi-specialty center, 
-                blending traditional knowledge with modern diagnostic tools.
+             <h3 className="fw-bold mb-3" style={{ color: brandGreen }}>{founders[0].name}</h3>
+             <h5 className="text-muted mb-4">{founders[0].role}</h5>
+             <p className="text-secondary mb-3">
+               We are proud to introduce <strong>Vd. Priyanka H. Dodiya (Verma), M.D. (Ayurveda)</strong> — Ayurveda Consultant and Founder of Brahmi Ayurveda & Panchakarma Hospital. She aims to restore balance of Doshas, strengthen Agni and promote long-term wellness with Shodhana (Panchakarma) and Shamana Chikitsa, lifestyle modification, and dietary counselling.
              </p>
-             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Signature_sample.svg/1200px-Signature_sample.svg.png" alt="Signature" style={{height: '50px', opacity: 0.6}} />
+             <p className="text-secondary mb-4">
+               With her <strong>12 years of clinical practice</strong> and institutional leadership, she focuses on classical Panchakarma therapies, quality-controlled Ayurvedic formulations and evidence-based Ayurveda.
+             </p>
+             <div className="bg-light p-4 rounded-3 border-start border-4" style={{ borderColor: brandGreen }}>
+               <h6 className="fw-bold mb-2" style={{ color: brandGreen }}>Areas of Expertise:</h6>
+               <ul className="mb-0 text-secondary">
+                 <li>Liver disorders</li>
+                 <li>Lifestyle disorders</li>
+                 <li>Digestive disorders</li>
+                 <li>Gynaecological disorders</li>
+                 <li>Cosmetic & Aesthetic conditions (Hair fall, dandruff, Acne, pimples, Hyperpigmentation, melasma)</li>
+               </ul>
+             </div>
+          </div>
+        </div>
+
+        {/* Founder 2: Dr. Aesha */}
+        <div className="row align-items-center flex-lg-row-reverse">
+          <div className="col-lg-5 mb-4 mb-lg-0 animate-slide-up">
+            <div className="position-relative">
+               <img 
+                 src={founders[1].img}
+                 alt={founders[1].name}
+                 className="img-fluid rounded-4 shadow-lg"
+               />
+               <div className="bg-white p-3 shadow position-absolute bottom-0 end-0 m-4 rounded-3">
+                  <h5 className="fw-bold mb-0" style={{color: brandGreen}}>{founders[1].name}</h5>
+                  <small>{founders[1].role}</small>
+               </div>
+            </div>
+          </div>
+          <div className="col-lg-7 pe-lg-5 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+             <h3 className="fw-bold mb-3" style={{ color: brandGreen }}>{founders[1].name}</h3>
+             <h5 className="text-muted mb-4">{founders[1].role}</h5>
+             <p className="text-secondary mb-3">
+               We are proud to introduce <strong>Dr. Aesha Desai (B.A.M.S.)</strong>, Ayurvedic Consultant, Panchakarma specialist and co-founder of Brahmi Ayurveda & Panchakarma Hospital, Vadodara, possessing excellent knowledge of Ayurvedic principles and its clinical application.
+             </p>
+             <p className="text-secondary mb-4">
+               She emphasizes ethical practice, root-cause-based treatment for long-term health and wellness with individualized care and expertise in Panchakarma.
+             </p>
+             <div className="bg-light p-4 rounded-3 border-start border-4" style={{ borderColor: brandGreen }}>
+               <h6 className="fw-bold mb-2" style={{ color: brandGreen }}>Areas of Expertise:</h6>
+               <ul className="mb-0 text-secondary">
+                 <li>Chronic lifestyle disorders</li>
+                 <li>Joint and muscular painful conditions</li>
+                 <li>Digestive problems</li>
+                 <li>Stress related disorders</li>
+                 <li>Women's health concerns</li>
+               </ul>
+             </div>
           </div>
         </div>
       </section>
@@ -101,7 +159,7 @@ const About = () => {
                {values.map((item, index) => (
                   <div className="col-md-4" key={index}>
                      <div className="card border-0 shadow-sm h-100 p-4 text-center hover-card animate-slide-up" style={{ animationDelay: `${index * 0.2}s` }}>
-                        <div className="mb-4 rounded-circle d-inline-flex align-items-center justify-content-center" 
+                        <div className="mb-4 rounded-circle d-inline-flex align-items-center justify-content-center mx-auto" 
                            style={{ width: '80px', height: '80px', backgroundColor: brandGreen, color: 'white' }}>
                            <i className={`bi ${item.icon} display-4`}></i>
                         </div>
@@ -114,7 +172,7 @@ const About = () => {
          </div>
       </section>
 
-      {/* ================= NEW: WHY CHOOSE US ================= */}
+      {/* ================= WHY CHOOSE US ================= */}
       <section className="py-5">
          <div className="container">
             <div className="row align-items-center">
@@ -126,22 +184,29 @@ const About = () => {
                   <div className="d-flex mb-4">
                      <div className="me-3"><i className="bi bi-check-circle-fill fs-4" style={{ color: brandGreen }}></i></div>
                      <div>
-                        <h5 className="fw-bold">Authentic Kerala Therapy</h5>
-                        <p className="text-muted small">Our therapists are trained in the traditional Keraliya Panchkarma methods.</p>
+                        <h5 className="fw-bold">Classical Panchakarma Therapies</h5>
+                        <p className="text-muted small">Authentic Shodhana treatments following traditional Ayurvedic principles.</p>
                      </div>
                   </div>
                   <div className="d-flex mb-4">
                      <div className="me-3"><i className="bi bi-check-circle-fill fs-4" style={{ color: brandGreen }}></i></div>
                      <div>
-                        <h5 className="fw-bold">Freshly Prepared Medicines</h5>
-                        <p className="text-muted small">We manufacture our own Kashayams and Oils to ensure 100% purity.</p>
+                        <h5 className="fw-bold">Quality-Controlled Formulations</h5>
+                        <p className="text-muted small">Evidence-based Ayurveda with carefully prepared medicines.</p>
+                     </div>
+                  </div>
+                  <div className="d-flex mb-4">
+                     <div className="me-3"><i className="bi bi-check-circle-fill fs-4" style={{ color: brandGreen }}></i></div>
+                     <div>
+                        <h5 className="fw-bold">Root-Cause Based Treatment</h5>
+                        <p className="text-muted small">Individualized care focusing on long-term health and wellness.</p>
                      </div>
                   </div>
                   <div className="d-flex">
                      <div className="me-3"><i className="bi bi-check-circle-fill fs-4" style={{ color: brandGreen }}></i></div>
                      <div>
-                        <h5 className="fw-bold">24/7 Residential Care</h5>
-                        <p className="text-muted small">Round-the-clock observation by doctors for In-Patient (IPD) cases.</p>
+                        <h5 className="fw-bold">Experienced Leadership</h5>
+                        <p className="text-muted small">Combined expertise of 12+ years in clinical practice and Panchakarma.</p>
                      </div>
                   </div>
                </div>
@@ -181,7 +246,7 @@ const About = () => {
          </div>
       </section>
 
-      {/* ================= NEW: OUR FACILITIES ================= */}
+      {/* ================= OUR FACILITIES ================= */}
       <section className="py-5">
          <div className="container">
             <div className="text-center mb-5">
@@ -204,36 +269,15 @@ const About = () => {
          </div>
       </section>
 
-      {/* ================= NEW: LEADERSHIP TEAM ================= */}
-      <section className="py-5 bg-light">
-         <div className="container">
-            <div className="text-center mb-5">
-               <h5 className="text-uppercase fw-bold" style={{ color: brandGreen }}>Leadership</h5>
-               <h2 className="fw-bold display-5">Meet Our Directors</h2>
-            </div>
-            <div className="row justify-content-center g-4">
-               {team.map((member, index) => (
-                  <div className="col-md-4 col-lg-3" key={index}>
-                     <div className="card border-0 shadow-sm h-100 text-center p-4 hover-card animate-slide-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                        <img src={member.img} alt={member.name} className="rounded-circle mb-3 mx-auto shadow-sm" style={{ width: '120px', height: '120px', objectFit: 'cover' }} />
-                        <h5 className="fw-bold mb-1" style={{ color: brandGreen }}>{member.name}</h5>
-                        <p className="text-muted small fw-bold mb-0 text-uppercase">{member.role}</p>
-                     </div>
-                  </div>
-               ))}
-            </div>
-         </div>
-      </section>
-
       {/* ================= CERTIFICATIONS & AWARDS ================= */}
       <section className="py-5 bg-dark text-white text-center">
          <div className="container">
-            <h2 className="fw-bold mb-5">Accreditations & Awards</h2>
+            <h2 className="fw-bold mb-5">Accreditations & Recognition</h2>
             <div className="row justify-content-center gap-5 align-items-center opacity-75">
-               <div className="col-md-2 col-6"><h4 className="fw-bold border p-3 rounded">ISO 9001</h4></div>
-               <div className="col-md-2 col-6"><h4 className="fw-bold border p-3 rounded">NABH</h4></div>
                <div className="col-md-2 col-6"><h4 className="fw-bold border p-3 rounded">AYUSH</h4></div>
-               <div className="col-md-2 col-6"><h4 className="fw-bold border p-3 rounded">GMP</h4></div>
+               <div className="col-md-2 col-6"><h4 className="fw-bold border p-3 rounded">M.D. Certified</h4></div>
+               <div className="col-md-2 col-6"><h4 className="fw-bold border p-3 rounded">B.A.M.S.</h4></div>
+               <div className="col-md-2 col-6"><h4 className="fw-bold border p-3 rounded">12+ Years</h4></div>
             </div>
          </div>
       </section>
@@ -242,7 +286,7 @@ const About = () => {
       <section className="py-5 text-center">
          <div className="container py-4">
             <h2 className="fw-bold mb-3">Ready to Experience Authentic Ayurveda?</h2>
-            <p className="text-muted mb-4">Visit our center or book a consultation online.</p>
+            <p className="text-muted mb-4">Visit our center or book a consultation with our expert doctors.</p>
             <Link to="/contact" className="btn btn-brand btn-lg rounded-pill px-5 shadow">Get in Touch</Link>
          </div>
       </section>
