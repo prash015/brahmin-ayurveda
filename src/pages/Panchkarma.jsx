@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import '../App.css'; 
 import KatiBasti from "../assets/images/KatiBasti.jpeg";
 import Vamana from "../assets/images/Vamana.jpeg";
-import Virechana from "../assets/images/Virechana.png";
+import Virechana from "../assets/images/Virechana.jpg";
+import nasaya from "../assets/images/nasya.jpg";
+import Raktamokshana from "../assets/images/Jaloka (Leeach therapy).jpeg"
 
 const Panchkarma = () => {
   const brandGreen = '#67be57'; 
@@ -33,7 +35,6 @@ const Panchkarma = () => {
       subtitle: 'Purgation Therapy',
       icon: 'bi-arrow-down-circle', 
       img: Virechana, 
-      img: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', 
       desc: 'Removal of toxins through the lower GI tract. Ideal for Pitta disorders like acidity, liver issues, and rashes.' 
     },
     { 
@@ -47,14 +48,14 @@ const Panchkarma = () => {
       title: 'Nasya', 
       subtitle: 'Nasal Administration',
       icon: 'bi-flower1', 
-      img: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', 
+      img: nasaya,
       desc: 'Instilling herbal oils in the nose to clear the head channel. Effective for migraines, sinusitis, and stress.' 
     },
     { 
       title: 'Raktamokshana', 
       subtitle: 'Bloodletting',
       icon: 'bi-bandaid', 
-      img: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', 
+      img: Raktamokshana,
       desc: 'Purification of the blood. Used rarely and carefully for severe skin diseases, eczema, and varicose veins.' 
     }
   ];

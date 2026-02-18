@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import '../App.css'; 
 import Shirodhara from "../assets/images/Shirodhara.jpeg";
 import Panchkarma from '../assets/images/Panchkarma.png';
+import Garbha from "../assets/images/garbha.jpg";
+import Nadi from "../assets/images/nadi.jpeg";
 
 const Home = () => {
   const brandGreen = '#67be57'; 
@@ -34,9 +36,9 @@ const Home = () => {
 
   // 2. SERVICES DATA
   const services = [
-    { title: 'Panchkarma', icon: 'bi-droplet-fill', img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80', desc: 'Deep detoxification therapies.', link: '/panchkarma' },
-    { title: 'Nadi Pariksha', icon: 'bi-activity', img: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=600&q=80', desc: 'Pulse diagnosis experts.', link: '/doctors' },
-    { title: 'Garba Sanskar', icon: 'bi-heart-pulse', img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80', desc: 'Ayurvedic prenatal care.', link: '/swasth-ayurveda' },
+    { title: 'Panchkarma', icon: 'bi-droplet-fill', img: Panchkarma, desc: 'Deep detoxification therapies.', link: '/panchkarma' },
+    { title: 'Nadi Pariksha', icon: 'bi-activity', img: Nadi, desc: 'Pulse diagnosis experts.', link: '/doctors' },
+    { title: 'Garbha Sanskar', icon: 'bi-heart-pulse', img: Garbha, desc: 'Ayurvedic prenatal care.', link: '/swasth-ayurveda' },
     { title: 'Skin Care', icon: 'bi-stars', img: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80', desc: 'Herbal treatments for skin.', link: '/swasth-ayurveda' },
     { title: 'Weight Mgmt', icon: 'bi-speedometer2', img: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=600&q=80', desc: 'Natural weight loss programs.', link: '/swasth-ayurveda' },
     { title: 'Hair Therapy', icon: 'bi-scissors', img: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=600&q=80', desc: 'Ayurvedic hair regrowth.', link: '/swasth-ayurveda' },
@@ -144,7 +146,7 @@ const Home = () => {
 
               <div className="row mb-4">
                  <div className="col-4">
-                    <h2 className="fw-bold display-6" style={{ color: brandGreen }}>15+</h2>
+                    <h2 className="fw-bold display-6" style={{ color: brandGreen }}>10+</h2>
                     <p className="text-muted small fw-bold">YEARS EXPERIENCE</p>
                  </div>
                  <div className="col-4">
@@ -152,22 +154,53 @@ const Home = () => {
                     <p className="text-muted small fw-bold">HAPPY PATIENTS</p>
                  </div>
                  <div className="col-4">
-                    <h2 className="fw-bold display-6" style={{ color: brandGreen }}>10+</h2>
+                    <h2 className="fw-bold display-6" style={{ color: brandGreen }}>2+</h2>
                     <p className="text-muted small fw-bold">EXPERT DOCTORS</p>
                  </div>
               </div>
 
-              <div className="bg-light p-4 rounded-4 border-start border-5 mb-4" style={{ borderColor: brandGreen }}>
-                <h5 className="fw-bold mb-3"><i className="bi bi-clock me-2"></i> Opening Hours</h5>
-                <ul className="list-unstyled mb-0">
-                  <li className="d-flex justify-content-between mb-2 border-bottom pb-2">
-                    <span>Mon - Fri</span> <span className="fw-bold" style={{ color: brandGreen }}>08:00 AM - 09:00 PM</span>
-                  </li>
-                  <li className="d-flex justify-content-between">
-                    <span>Sunday</span> <span className="text-muted">Closed</span>
-                  </li>
-                </ul>
-              </div>
+              <div
+  className="bg-light p-4 rounded-4 border-start border-5 mb-4"
+  style={{ borderColor: brandGreen }}
+>
+  <h5 className="fw-bold mb-3">
+    <i className="bi bi-clock me-2"></i> Opening Hours
+  </h5>
+
+  <ul className="list-unstyled mb-3">
+    <li className="d-flex justify-content-between mb-2 border-bottom pb-2">
+      <span>Mon - Sat</span>
+      <span className="fw-bold" style={{ color: brandGreen }}>
+        10:00 AM - 2:00 PM
+      </span>
+    </li>
+
+    <li className="d-flex justify-content-between mb-2 border-bottom pb-2">
+      <span>Evening</span>
+      <span className="fw-bold" style={{ color: brandGreen }}>
+        4:30 PM - 8:00 PM
+      </span>
+    </li>
+
+    <li className="d-flex justify-content-between">
+      <span>Sunday</span>
+      <span className="text-muted">Closed</span>
+    </li>
+  </ul>
+
+  {/* Extra Info */}
+  <div className="mt-3">
+    <p className="mb-1">
+      <i className="bi bi-award me-2"></i>
+      <strong>10+ Years Experience</strong>
+    </p>
+    <p className="mb-0">
+      <i className="bi bi-person-check me-2"></i>
+      <strong>2+ Expert Doctors</strong>
+    </p>
+  </div>
+</div>
+
 
               <Link to="/about" className="btn btn-brand rounded-pill px-5 py-3 shadow">Explore More</Link>
             </div>
@@ -212,40 +245,59 @@ const Home = () => {
       </section>
 
       {/* ================= APPOINTMENT SECTION ================= */}
-      <section className="py-5 text-white" 
-        style={{ 
-          backgroundColor: brandGreen, 
-          background: `linear-gradient(${brandGreen}, #4da040)` 
-        }}>
-        <div className="container py-5">
-          <div className="row align-items-center">
-             <div className="col-lg-6 mb-4 mb-lg-0">
-                <h2 className="fw-bold display-4 mb-3">Get Your Appointment</h2>
-                <p className="lead mb-4 opacity-75">Online booking helps you save waiting time and stay safe. 24/7 Support available.</p>
-                <ul className="list-unstyled fs-5">
-                   <li className="mb-2"><i className="bi bi-check-circle-fill me-2"></i> 24/7 Online Support</li>
-                   <li className="mb-2"><i className="bi bi-check-circle-fill me-2"></i> Expert Ayurvedic Doctors</li>
-                   <li className="mb-2"><i className="bi bi-check-circle-fill me-2"></i> 100% Herbal Medicines</li>
-                </ul>
-             </div>
-             <div className="col-lg-6">
-                <div className="bg-white p-5 rounded-4 shadow text-dark">
-                   <form>
-                      <div className="row g-3">
-                         <div className="col-6"><input type="text" className="form-control p-3" placeholder="Name" /></div>
-                         <div className="col-6"><input type="email" className="form-control p-3" placeholder="Email" /></div>
-                         <div className="col-12"><input type="tel" className="form-control p-3" placeholder="Phone" /></div>
-                         <div className="col-12"><textarea className="form-control p-3" rows="3" placeholder="Describe your problem"></textarea></div>
-                         <div className="col-12">
-                            <button className="btn btn-dark w-100 fw-bold py-3 rounded-pill">Book Appointment Now</button>
-                         </div>
-                      </div>
-                   </form>
-                </div>
-             </div>
-          </div>
-        </div>
-      </section>
+<section
+  className="py-5 text-white"
+  style={{
+    backgroundColor: brandGreen,
+    background: `linear-gradient(${brandGreen}, #4da040)`
+  }}
+>
+  <div className="container py-5">
+    <div className="row align-items-center text-center text-lg-start">
+      
+      <div className="col-lg-8 mb-4 mb-lg-0">
+        <h2 className="fw-bold display-4 mb-3">
+          Get Your Appointment
+        </h2>
+
+        <p className="lead mb-4 opacity-75">
+          Online booking helps you save waiting time and stay safe.
+          24/7 Support available.
+        </p>
+
+        <ul className="list-unstyled fs-5">
+          <li className="mb-2">
+            <i className="bi bi-check-circle-fill me-2"></i>
+            24/7 Online Support
+          </li>
+
+          <li className="mb-2">
+            <i className="bi bi-check-circle-fill me-2"></i>
+            Expert Ayurvedic Doctors
+          </li>
+
+          <li className="mb-2">
+            <i className="bi bi-check-circle-fill me-2"></i>
+            100% Herbal Medicines
+          </li>
+        </ul>
+      </div>
+
+      {/* Book Button */}
+      <div className="col-lg-4 text-center">
+        <Link
+          to="/appointment"
+          className="btn btn-light btn-lg fw-bold px-5 py-3 rounded-pill shadow"
+          style={{ color: brandGreen }}
+        >
+          Book Now
+        </Link>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
        {/* ================= BLOG SECTION ================= */}
        <section className="container py-5 my-5">
